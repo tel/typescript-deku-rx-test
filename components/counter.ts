@@ -10,7 +10,7 @@ export interface P extends PropLike {
 }
 
 export interface S {
-  accumulation: number;
+  sum: number;
 }
 
 export var spec: Spec<P, S> = {
@@ -18,7 +18,7 @@ export var spec: Spec<P, S> = {
   
   render: (c, setS) => {
     var currentCount = c.props.count;
-    var currentAcc   = c.state.accumulation;
+    var currentAcc   = c.state.sum + currentCount;
     return e("div", {}, [currentCount.toString() + " / " + currentAcc.toString()]);
   },
   
@@ -26,10 +26,10 @@ export var spec: Spec<P, S> = {
     return (c.props.count !== nextP.count);  
   },
   
-  initialState: () => { return { accumulation: 0 } },
+  initialState: () => { return { sum: 0 } },
   defaultProps: { count: 0 },
   
-  beforeMount: (c) => {
+  beforeMount: function(c) {
     console.log("Before Mount: ");
     console.log(c);
   },
@@ -62,7 +62,7 @@ export var spec: Spec<P, S> = {
     console.log("After Update: ");
     console.log(c);
     console.log(prevP);
-    var newS = { accumulation: c.state.accumulation + c.props.count }; 
+    var newS = { sum: c.state.sum + c.props.count }; 
     setS(newS);
     console.log(prevS);
     console.log(newS);
