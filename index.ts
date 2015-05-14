@@ -5,7 +5,7 @@ import Counter = require('./components/counter');
 var e = Deku.element;
 
 // Initialize tree
-var tree = Deku.tree(e(Counter, {}));
+var tree = Deku.tree(e(Counter.spec, {}));
 
 window.onload = (ev) => {
   var root = document.getElementById("root");
@@ -14,7 +14,7 @@ window.onload = (ev) => {
   // Event loop
   function loop(i: number): void {
     if (i <= 10) {
-      tree.mount(e(Counter, { count: n }));
+      tree.mount(e(Counter.spec, { count: n }));
       n += 1;    
       setTimeout(loop, 1000, i + 1);      
     }
