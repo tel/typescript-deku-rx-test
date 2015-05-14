@@ -1,0 +1,35 @@
+{
+  "name": "deku-rx",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph Abrahamson <me@jspha.com>",
+  "license": "BSD3",
+  "dependencies": {
+    "deku": "^0.2.17",
+    "immutable": "^3.7.2",
+    "rx": "^2.5.2"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-typescript": "^2.6.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
+    "less": "^2.5.0",
+    "lodash": "^3.8.0",
+    "rimraf": "^2.3.3",
+    "tsd": "^0.5.7",
+    "tsify": "^0.8.1",
+    "uglify-js": "^2.4.21",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.1"
+  }
+}
